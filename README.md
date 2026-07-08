@@ -7,9 +7,9 @@ the features are :
 2) delete books
 3) research for a book
 4) edit rate of a book
-5) research for rate of a book
-6) view the books with ratings
-7) exit
+5) research for a book by its rate
+7) view the books with ratings
+8) exit
 
 
 important note : 
