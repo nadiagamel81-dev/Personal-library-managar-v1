@@ -1,0 +1,108 @@
+while True : 
+
+	print ("\nHi in your personal library manager. ")
+	print ("what do you want to do? ")
+	
+	add_books = "add books"
+	delete_books ="delete book"
+	research_for_a_book ="research for a book"
+	edit_rating = "edit rate of a book"
+	research_for_rate_of_a_book ="research for rate of a book"
+	view_the_books_with_their_rating="view the books with their rating"
+	
+	
+	print(f"\n1.{add_books}")
+	print (f"2.{delete_books}")
+	print(f"3.{research_for_a_book}")
+	print(f"4.{edit_rating}")
+	print(f"5.{research_for_rate_of_a_book}")
+	print(f"6.{view_the_books_with_their_rating}")
+	print("7.exit")
+	
+	print("choose 1-7")
+	
+	book = input("choose. ")
+	
+	my_books_with_ratings = {5:["jungle book"], 9:["the prince and the poper"], 10:["harry potter"]}
+	my_books = ["harry potter","jungle book","the prince and the poper"]
+	
+	if book == "1" :
+	    add_book = input("write the name of the new book ").strip().lower()
+	    add_rate_of_book = int(input("write the rate of book from 10 "))
+	    
+	    if add_rate_of_book > 10:
+	        print("write rate from 10 and write number")
+	    elif add_rate_of_book in my_books_with_ratings:
+	        my_books_with_ratings[add_rate_of_book].append(add_book)
+	    else:
+	        my_books_with_ratings[add_rate_of_book] = [add_book]
+	    
+	    my_books.append(add_book)
+	    print(f"your books now are: {my_books}")
+	    print(f"your books with their rating are now: {my_books_with_ratings}")
+	
+	
+	elif book == "2" :
+		
+		
+		print(f"your books are {my_books} and you have 3 chances to write the correct name of book")
+		
+	
+		chances = 3
+		while chances > 0 :
+			delete_book =input("write the name of the book you want to delete  ").strip().lower()
+			if delete_book in my_books :
+				my_books.remove(delete_book)
+				print(f"your books become{my_books}")	
+				break
+			else :
+				chances -= 1
+				print(f"you have {chances} chances left to delete a book ")
+				if chances == 0 :
+					print("your chances have been finished")
+	
+	
+	elif book == "3" :	
+		print(f"your books are {my_books} and you have 3 chances to write the correct name of book")
+		chances = 3 
+		while chances > 0 :
+		
+			research_for_a_book=input ("what is the name of the book ?  ").strip().lower()
+			if research_for_a_book in my_books :
+				print(f"the book is found  '{research_for_a_book}'") 
+				break
+			else :
+				chances-= 1
+				print("the book is not in the list")
+				print(f"you have {chances} chances left to research for a book ")
+				if chances == 0 :
+					print("your chances have been finished")
+	
+	
+	
+	
+	elif book == "4":
+		print(my_books_with_ratings)
+		edit_ratings =input  ("what is the book you want to edit its rating ").strip().lower()
+		my_books_with_ratings.clear()
+		edits_rating =input("what is the new rating. ")	
+		my_books_with_ratings.update({edit_ratings : edits_rating})
+		print("the new rate of book is :",my_books_with_ratings)
+	
+	elif book == "5":
+		print(my_books_with_ratings)
+		research_for_rate_of_books =float(input ("what is the rating book you want  "))
+		if research_for_rate_of_books in my_books_with_ratings :
+			print(my_books_with_ratings.get(research_for_rate_of_books))
+	
+	elif book == "6 " :
+		print(f"your books with ratings are {my_books_with_ratings}")
+		
+		
+	
+	elif book == "7" :
+		print("thanks for using the app  ")
+	exit = input ("do you want to exit the app yes or no  ").strip().lower()
+	if exit == "yes" :
+		print ("thanks for using the app")
+		break
