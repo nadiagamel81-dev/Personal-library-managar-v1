@@ -3,7 +3,7 @@
 it's an app you use to manage your books 
 
 the features are :
-1) add books with ratings from 10 
+1) add books with ratings from 0 to 10 
 2) delete books
 3) research for a book
 4) edit rate of a book
