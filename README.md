@@ -1,4 +1,4 @@
-# Personal-library-managar-v1
+# Personal-library-manager-v1
 
 it's an app you use to manage your books 
 
